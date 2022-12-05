@@ -41,6 +41,7 @@ def setup():
         main()
 
 #Deciding if setup is necessary
+#No reason for this to be in if name == main BUT it just happens to be there now
 if __name__ == "__main__":
     if exists("config.txt") == True:
         main()
