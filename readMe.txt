@@ -1,3 +1,6 @@
-Using this tool requires installation of these libraries:
+Follow these steps to setup the translator
 
-pip install googletrans==3.1.0a0
+1. Add +con_logfile "file_name_here" to CSGO launch options
+
+2. Install following libraries
+   pip install googletrans==3.1.0a0
