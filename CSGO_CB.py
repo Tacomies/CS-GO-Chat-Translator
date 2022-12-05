@@ -17,7 +17,7 @@ def toEn(lst):
     return translated
 
 def read_chat(path):
-    with open(path, "r") as log:
+    with open(path, encoding = 'utf-8', mode = 'r') as log:
         return [line for line in log if " : " in line]
 
 def clearLog(path): #Clearing log for better performance
@@ -25,7 +25,7 @@ def clearLog(path): #Clearing log for better performance
 
 def main():
     config = {}
-    with open("config.txt", "r") as conf:
+    with open("config.txt", encoding = 'utf-8', mode = 'r') as conf:
         config["path"] = conf.read()
     clearLog(config["path"])
     
@@ -35,7 +35,7 @@ def main():
         sleep(1)
 
 def setup():
-    with open("config.txt", "w") as config:
+    with open("config.txt", encoding = 'utf-8', mode = 'w') as config:
         config.write(input("Path to logfile: "))
         print("\nSaved!")
         main()
