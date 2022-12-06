@@ -4,11 +4,11 @@ from time import sleep
 gt = Translator()
 
 
-def output(lst):
+def output(lst): #Prints messages nicely formatted
     for message in lst:
         print(f"{message[0]:<17} : {message[1]}")
 
-def toEn(lst):
+def toEn(lst): #Translates messages to English
     translated = []
     for message in lst:
         temp = message.split(" : ")
@@ -16,25 +16,26 @@ def toEn(lst):
             translated.append([temp[0], gt.translate(temp[1], dest="en").text])
     return translated
 
-def read_chat(path):
+def read_chat(path): #Reads logfile
     with open(path, encoding = 'utf-8', mode = 'r') as log:
         return [line for line in log if " : " in line]
 
 def clearLog(path): #Clearing log for better performance
     open(path, "w")
 
-def main():
+def main(): #main Program
     config = {}
     with open("config.txt", encoding = 'utf-8', mode = 'r') as conf:
-        config["path"] = conf.read()
-    clearLog(config["path"])
-    
+        config["path"] = conf.read() 
     while True:
         toTranslate = read_chat(config["path"])
-        output(toEn(toTranslate))
+        messages = toEn(toTranslate)
+        if len(messages) > 0:
+            output(messages)
+        clearLog(config["path"])
         sleep(1)
 
-def setup():
+def setup(): #Setup if you don't have set configs
     with open("config.txt", encoding = 'utf-8', mode = 'w') as config:
         config.write(input("Path to logfile: "))
         print("\nSaved!")
