@@ -39,7 +39,7 @@ def setup(): #Setup if you don't have set configs
     with open("config.txt", encoding = 'utf-8', mode = 'w') as config:
         config.write(input("Path to logfile: "))
         print("\nSaved!")
-        main()
+    main()
 
 #Deciding if setup is necessary
 #No reason for this to be in if name == main BUT it just happens to be there now
