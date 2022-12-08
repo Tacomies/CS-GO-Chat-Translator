@@ -30,8 +30,7 @@ def main(): #main Program
     while True:
         toTranslate = read_chat(config["path"])
         messages = toEn(toTranslate)
-        if len(messages) > 0:
-            output(messages)
+        output(messages)
         clearLog(config["path"])
         sleep(1)
 
