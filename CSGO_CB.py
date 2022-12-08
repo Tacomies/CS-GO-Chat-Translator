@@ -37,7 +37,10 @@ def main(): #main Program
 
 def setup(): #Setup if you don't have set configs
     with open("config.txt", encoding = 'utf-8', mode = 'w') as config:
-        config.write(input("Path to logfile: "))
+        path = input("Path to logfile: ")
+        if exists(path) != True:
+            print("Path doesn't exist")
+            setup()
         print("\nSaved!")
     main()
 

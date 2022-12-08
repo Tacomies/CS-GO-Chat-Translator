@@ -6,3 +6,5 @@ Follow these steps to setup the translator
 
 CHANGES
 -Fixed crash after first setup
+-Script now malds if your path
+ is garbage
