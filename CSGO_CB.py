@@ -43,11 +43,13 @@ def setup(): #Setup if you don't have set configs
         print("\nSaved!")
     main()
 
-#Deciding if setup is necessary
-#No reason for this to be in if name == main BUT it just happens to be there now
-if __name__ == "__main__":
-    if exists("config.txt") == True:
+def start(): #Deciding starting method
+    if exists("config.txt"):
         main()
     else:
         setup()
+
+
+if __name__ == "__main__":
+    start()
         
