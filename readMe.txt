@@ -6,4 +6,5 @@ Follow these steps to setup the translator
 
 
 *CHANGES*
--Made starting program more efficient
+   -Fixed setup
+   -Changes on output formatting

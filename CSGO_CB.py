@@ -6,7 +6,7 @@ gt = Translator()
 
 def output(lst): #Prints messages nicely formatted
     for message in lst:
-        print(f"{message[0]:<17} : {message[1]}")
+        print(f"{message[0].replace('(Terrorist) ', '').replace('(Counter-Terrorist) ', ''):<17} : {message[1]}")
 
 def toEn(lst): #Translates messages to English
     translated = []
@@ -37,10 +37,8 @@ def main(): #main Program
 def setup(): #Setup if you don't have set configs
     with open("config.txt", encoding = 'utf-8', mode = 'w') as config:
         path = input("Path to logfile: ")
-        if exists(path) != True:
-            print("Path doesn't exist")
-            setup()
-        print("\nSaved!")
+        config.write(path)
+    print("\nSaved!")
     main()
 
 def start(): #Deciding starting method
